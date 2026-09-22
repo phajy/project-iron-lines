@@ -12,6 +12,7 @@
 NASA's [ADS](https://ui.adsabs.harvard.edu/) is the best way to find papers. You can also use ADS to find out which  papers cite a specific paper whcih can be helpful to find more recent papers on a specific topic.
 
 - [An XMM-Newton survey of broad iron lines in Seyfert galaxies](https://ui.adsabs.harvard.edu/abs/2007MNRAS.382..194N/abstract) is an overview of broad iron lines from 2007 so you might want to supplement this with some more modern papers.
+- [A long hard look at MCG-6-30-15 with XMM-Newton](https://ui.adsabs.harvard.edu/abs/2002MNRAS.335L...1F/abstract)
 
 ## Data
 
