@@ -80,6 +80,14 @@ if [ $OBS_ID == "" ]; then
     exit 1
 fi
 
+export FOLDER=$(echo -n $(pwd) | tail -c 3)
+
+if [ FOLDER != "ODF" ]; then
+    echo "You must be in an ODF directory"
+    usage
+    exit 1
+fi
+
 # Running pipelines
 bash $DIR/Pipelines.sh $SIGMA
 
