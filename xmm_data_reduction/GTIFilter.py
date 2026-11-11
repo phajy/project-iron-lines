@@ -1,3 +1,4 @@
+import sys
 from astropy.io import fits
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,11 +16,14 @@ mpl.rcParams["errorbar.capsize"] = 1.5
 mpl.rcParams["lines.markersize"] = 0.1
 
 def FindBounds(data, sigma=1):
+    """
+    Getting a filtering expression for the lightcurve such that only data with a rate within `sigma` standard deviations of the mean is taken 
+    """
 
     mean = np.mean(data)
     std = np.std(data)
 
-    expression = f"(RATE<={mean+std})&&(RATE>={mean-std})"
+    expression = f"(RATE<={mean+sigma*std})&&(RATE>={mean-sigma*std})"
 
     return expression, mean, std
 
@@ -44,15 +48,17 @@ def PlotBounds(data, mean, std):
 
 f = open("GTIFilters.txt", "w")
 
+sigma = float(sys.argv[1])
+
 # ==========================================================================================
 
 hdu = fits.open("pn_ltcrv.fits")
 
 data = hdu[1].data
 
-expression, mean, std = FindBounds(data["RATE"], 1)
+expression, mean, std = FindBounds(data["RATE"], sigma)
 
-PlotBounds(data, mean, std)
+PlotBounds(data, mean, sigma*std)
 
 plt.savefig("pn_gti_filter.png")
 
@@ -64,9 +70,9 @@ hdu = fits.open("mos1_ltcrv.fits")
 
 data = hdu[1].data
 
-expression, mean, std = FindBounds(data["RATE"], 1)
+expression, mean, std = FindBounds(data["RATE"], sigma)
 
-PlotBounds(data, mean, std)
+PlotBounds(data, mean, sigma*std)
 
 plt.savefig("mos1_gti_filter.png")
 
@@ -78,9 +84,9 @@ hdu = fits.open("mos2_ltcrv.fits")
 
 data = hdu[1].data
 
-expression, mean, std = FindBounds(data["RATE"], 1)
+expression, mean, std = FindBounds(data["RATE"], sigma)
 
-PlotBounds(data, mean, std)
+PlotBounds(data, mean, sigma*std)
 
 plt.savefig("mos2_gti_filter.png")
 
