@@ -9,6 +9,9 @@ DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Unzip
 gzip -d *.gz
 
+rm ccf.cif
+rm *SUM.SAS
+
 # Set environment variables and build cif file
 export SAS_ODFPATH="$(pwd)"
 export SAS_ODF="$(pwd)"
@@ -27,8 +30,10 @@ mkdir ../PROC
 cd ../PROC
 
 # Reprocessing pipelines
-emproc
-epproc
+echo "Running emproc"
+emproc > emproc.txt
+echo "Running epproc"
+epproc > epproc.txt
 
 export mos1=$(ls *_EMOS1_*ImagingEvts.ds)
 export mos2=$(ls *_EMOS2_*ImagingEvts.ds)
@@ -51,4 +56,4 @@ evselect table=mos2_filt.fits withrateset=Y rateset=mos2_ltcrv.fits maketimecolu
 evselect table=pn_filt.fits withrateset=Y rateset=pn_ltcrv.fits maketimecolumn=Y timebinsize=100 makeratecolumn=yes 
 
 # Running the python script to determine GTI filters
-python $DIR/GTIFilter.py
+python $DIR/GTIFilter.py $1
