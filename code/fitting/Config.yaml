@@ -1,0 +1,90 @@
+Afe:
+  max: 10.0
+  min: 0.5
+  value: 1.0
+  vary: true
+Ecut:
+  max: 1000.0
+  min: 5.0
+  value: 300.0
+  vary: true
+Incl:
+  max: 87.0
+  min: 3.0
+  value: 30.0
+  vary: true
+Index1:
+  max: 10.0
+  min: -10.0
+  value: 5.0
+  vary: true
+Index2:
+  max: 10.0
+  min: -10.0
+  value: 3.0
+  vary: true
+LineE:
+  max: 1000000.0
+  min: 0.0
+  value: 6.350464
+  vary: false
+Rbr:
+  max: 15.0
+  min: 1.0
+  value: 5.0
+  vary: true
+Rin:
+  max: -1.0
+  min: -100.0
+  value: -1.0
+  vary: false
+Rout:
+  max: 1000.0
+  min: 1.0
+  value: 400.0
+  vary: false
+Sigma:
+  max: 20.0
+  min: 0.0
+  value: 0.001
+  vary: true
+a:
+  max: 0.998
+  min: -0.998
+  value: 0.998
+  vary: true
+gamma:
+  max: 3.4
+  min: 1.0
+  value: 2.0
+  vary: true
+logxi:
+  max: 4.7
+  min: 0.0
+  value: 3.1
+  vary: true
+nH:
+  max: 1000000.0
+  min: 0.0
+  value: 0.00406
+  vary: false
+norm_gaussian:
+  max: 6.0
+  min: -7.0
+  value: -5.0
+  vary: true
+norm_relxill:
+  max: 6.0
+  min: -7.0
+  value: -3.0
+  vary: true
+refl_frac:
+  max: 1000.0
+  min: -1000.0
+  value: 3.0
+  vary: true
+z:
+  max: 10.0
+  min: 0.0
+  value: 0.00775
+  vary: false
