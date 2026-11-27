@@ -194,6 +194,7 @@ cp "$INSTRUMENT"_pi.fits ../PRODUCTS/"$OBS_ID"_"$INSTRUMENT"_pi.fits
 cp bkg_pi.fits ../PRODUCTS/"$OBS_ID"_"$INSTRUMENT"_bkg_pi.fits
 cp "$INSTRUMENT"_rmf.fits ../PRODUCTS/"$OBS_ID"_"$INSTRUMENT"_rmf.fits
 cp "$INSTRUMENT"_arf.fits ../PRODUCTS/"$OBS_ID"_"$INSTRUMENT"_arf.fits
+cp "$INSTRUMENT"_expmap_2-10keV.fits ../PRODUCTS/"$INSTRUMENT"_expmap_2-10keV.fits
 
 # Enter the products directory
 cd ../PRODUCTS
