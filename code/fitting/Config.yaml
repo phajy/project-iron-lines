@@ -24,10 +24,10 @@ Index2:
   value: 3.0
   vary: true
 LineE:
-  max: 1000000.0
-  min: 0.0
+  max: 6.46
+  min: 6.34
   value: 6.350464
-  vary: false
+  vary: true
 Rbr:
   max: 15.0
   min: 1.0
